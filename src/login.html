@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body class="overflow-hidden min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-[#D0B9A7] to-[#B5A192] shadow-md flex justify-center items-center h-14">
+        <h1 class="text-white text-3xl font-extrabold tracking-wide">Cartify</h1>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="bg-gradient-to-b from-[#714329] via-[#B08463] to-[#B9937B] flex flex-1 justify-center items-center">
+        <!-- Card -->
+        <div class="bg-white/20 backdrop-blur-lg shadow-xl p-10 rounded-2xl w-full max-w-sm text-center">
+            <h1 class="text-3xl text-white font-bold mb-6">Welcome Back</h1>
+            <p class="text-gray-100 mb-8 text-sm">Login to continue shopping</p>
+
+            <!-- Form -->
+            <form class="space-y-6">
+                <!-- Email -->
+                <div class="text-left">
+                    <label class="block text-sm text-gray-100 font-semibold mb-1" for="email">Email</label>
+                    <input class="w-full py-2 px-3 rounded-lg bg-white/70 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                           type="email" id="Email" placeholder="Enter your email">
+                </div>
+
+                <!-- Password -->
+                <div class="text-left">
+                    <label class="block text-sm text-gray-100 font-semibold mb-1" for="password">Password</label>
+                    <input class="w-full py-2 px-3 rounded-lg bg-white/70 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400" 
+                           type="password" id="Password" placeholder="Enter your password">
+                </div>
+
+                <!-- Button -->
+                <button class="w-full py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:opacity-90 transition duration-300" id="input-btn">
+                    Login
+                </button>
+            </form>
+
+            <!-- Footer Links -->
+            <div class="mt-6 text-sm text-gray-200">
+                <a href="#" class="hover:underline">Forgot password?</a> • 
+                <a href="./signup.html" class="hover:underline">Sign up</a>
+            </div>
+        </div>
+    </div>
+    <script src="loginscript.js"></script>
+</body>
+
+</html>

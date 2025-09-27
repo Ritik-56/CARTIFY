@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script async
+  src="https://pay.google.com/gp/p/js/pay.js"
+  onload="onGooglePayLoaded()"></script>
+</head>
+<body>
+
+    <script>
+        function onGooglePayLoaded() {
+  const paymentsClient = new google.payments.api.PaymentsClient({ environment: 'TEST' });
+
+  const baseRequest = {
+    apiVersion: 2,
+    apiVersionMinor: 0
+  };
+
+  const allowedCardNetworks = ["VISA", "MASTERCARD"];
+  const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+
+  const tokenizationSpecification = {
+    type: 'PAYMENT_GATEWAY',
+    parameters: {
+      'gateway': 'example',   // replace with your gateway
+      'gatewayMerchantId': 'exampleMerchantId'
+    }
+  };
+
+  const cardPaymentMethod = {
+    type: 'CARD',
+    parameters: {
+      allowedAuthMethods: allowedCardAuthMethods,
+      allowedCardNetworks: allowedCardNetworks
+    },
+    tokenizationSpecification: tokenizationSpecification
+  };
+
+  const paymentDataRequest = Object.assign({}, baseRequest, {
+    allowedPaymentMethods: [cardPaymentMethod],
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPrice: '0.01', // update dynamically from cart
+      currencyCode: 'INR'
+    },
+    merchantInfo: {
+      merchantName: 'Cartify'
+    }
+  });
+
+  // Add Google Pay button
+  const button = paymentsClient.createButton({
+    onClick: () => paymentsClient.loadPaymentData(paymentDataRequest)
+      .then(paymentData => {
+        console.log(paymentData); // send token to backend
+      })
+      .catch(err => console.error(err))
+  });
+
+  document.getElementById('checkoutBtnContainer').appendChild(button);
+}
+
+    </script>
+</body>
+</html>

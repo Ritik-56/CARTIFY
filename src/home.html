@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 text-gray-800">
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-md flex justify-between items-center px-8 h-16">
+    
+    <!-- Logo -->
+    <h1 class="text-2xl font-extrabold tracking-wide text-[#8B5E3C] transition-transform duration-300 hover:scale-110">
+      Cartify
+    </h1>
+
+    <!-- Nav Links -->
+    <ul class="flex space-x-6 font-medium">
+      <li><a href="./home.html" class="hover:text-[#8B5E3C] transition duration-300 ease-in-out">Home</a></li>
+      <li><a href="./category.html" class="hover:text-[#8B5E3C] transition duration-300 ease-in-out">Category</a></li>
+      <li><a href="./cart.html" class="hover:text-[#8B5E3C] transition duration-300 ease-in-out">Cart</a></li>
+    </ul>
+
+    <!-- Search Bar -->
+    <div>
+      <input 
+        type="search" 
+        placeholder="Search products..." 
+        class="px-3 py-1.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8B5E3C] shadow-sm"
+      />
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <div class="banner h-72 bg-gradient-to-r from-[#B5A192] to-[#D0B9A7] flex justify-center items-center shadow-inner">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">Welcome to Cartify ✨</h2>
+  </div>
+
+  <!-- Sale Section -->
+  <div class="sale bg-gradient-to-r from-red-500 via-pink-500 to-rose-500 text-white py-16 px-6 flex flex-col items-center rounded-2xl mx-4 mt-10 shadow-lg">
+    <h2 class="text-4xl font-extrabold mb-3">🔥 Big Sale Today!</h2>
+    <p class="text-lg mb-6">Enjoy up to <span class="font-bold">50% OFF</span> on selected items</p>
+    <button class="bg-white text-red-600 px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+      Shop Now
+    </button>
+  </div>
+
+  <!-- Random Products Section -->
+  <div class="randomproducts py-16 px-6 bg-white mt-12 rounded-2xl shadow-sm mx-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-[#8B5E3C]">✨ Recommended for You</h2>
+  
+    <!-- Loader -->
+    <div id="loader" class="flex justify-center items-center py-10">
+      <div class="w-14 h-14 border-4 border-[#B5A192] border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <!-- Products will load here -->
+    </div>
+  </div>
+
+  <script src="homesrcript.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+
+
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-md flex justify-between items-center px-8 h-16">
+    <h1 class="text-2xl font-extrabold tracking-wide text-[#8B5E3C]">Cartify</h1>
+    <ul class="flex space-x-6 font-medium">
+      <li><a href="./home.html" class="hover:text-[#8B5E3C]">Home</a></li>
+      <li><a href="./category.html" class="hover:text-[#8B5E3C]">Category</a></li>
+      <li><a href="./cart.html" class="hover:text-[#8B5E3C]">Cart</a></li>
+    </ul>
+    <input type="search" placeholder="Search products..." class="px-3 py-1.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8B5E3C] shadow-sm"/>
+  </nav>
+
+  <!-- Cart Section -->
+  <div class="container flex flex-col md:flex-row p-6 gap-6">
+    <!-- Products -->
+    <div class="flex-1">
+      <div id="loader" class="flex justify-center items-center py-16">
+        <div class="w-12 h-12 border-4 border-[#8B5E3C] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+
+      <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </div>
+
+    <!-- Total -->
+    <div id="totaldiv" class="bg-white rounded-xl shadow-md p-6 w-full md:w-72 h-fit">
+      <h2 class="text-xl font-bold mb-4 text-[#8B5E3C]">Cart Summary</h2>
+      <p id="totalPrice" class="text-lg font-semibold text-gray-700">Total: ₹0</p>
+        <div id="checkoutBtnContainer" class="mt-6 flex justify-end"></div>
+
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script async
+  src="https://pay.google.com/gp/p/js/pay.js"
+  onload="onGooglePayLoaded()">
+</script>
+</body>
+</html>

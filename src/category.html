@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-md flex justify-between items-center px-8 h-16">
+    <h1 class="text-2xl font-extrabold tracking-wide text-[#8B5E3C]">Cartify</h1>
+    <ul class="flex space-x-6 font-medium">
+      <li><a href="./home.html" class="hover:text-[#8B5E3C]">Home</a></li>
+      <li><a href="./category.html" class="hover:text-[#8B5E3C]">Category</a></li>
+      <li><a href="./cart.html" class="hover:text-[#8B5E3C]">Cart</a></li>
+    </ul>
+    <input type="search" placeholder="Search products..." class="px-3 py-1.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8B5E3C] shadow-sm"/>
+  </nav>
+
+  <!-- Dynamic Categories will be injected here -->
+  <main id="categoryContainer" class="mt-8 px-4"></main>
+
+  <script src="category.js"></script>
+</body>
+</html>
